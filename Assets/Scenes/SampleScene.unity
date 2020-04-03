@@ -222,6 +222,7 @@ MonoBehaviour:
   - {fileID: 2121279449}
   - {fileID: 1055432697}
   - {fileID: 997885849}
+  _spawnTime: 5
 --- !u!4 &136581741
 Transform:
   m_ObjectHideFlags: 0
@@ -5833,6 +5834,7 @@ MonoBehaviour:
   - {fileID: 2121279449}
   - {fileID: 1055432697}
   - {fileID: 997885849}
+  _spawnTime: 5
 --- !u!4 &1138416784
 Transform:
   m_ObjectHideFlags: 0
@@ -10764,6 +10766,7 @@ MonoBehaviour:
   - {fileID: 2121279449}
   - {fileID: 1055432697}
   - {fileID: 997885849}
+  _spawnTime: 5
 --- !u!4 &1722095547
 Transform:
   m_ObjectHideFlags: 0
