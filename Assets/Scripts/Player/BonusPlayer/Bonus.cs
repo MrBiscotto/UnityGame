@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Bonus : MonoBehaviour
 {
@@ -8,33 +6,33 @@ public class Bonus : MonoBehaviour
 
     public int LifeTime { get => lifeTime; set => lifeTime = value; }
 
-    protected void DropBonusMob(Enemy enemy,GameObject prefab)
-    {
-        Debug.Log(" PREFAB  " + prefab);
-        Instantiate(prefab, new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z), Quaternion.identity);
-    }
 
-    /*protected void RandomDropBonus()
+    protected void RandomDropBonus(Transform posEnemy)
     {
-        int chance = Random.Range(1, 100);
+        int chance = Random.Range(1, 1000);
+
+        Debug.Log("CHANCE ENTRE LES 2 BONUS " + chance);
 
         switch (chance)
         {
-            case int n when (n <= 100):
-
-                DropBonusMob();
+            case int tauxChance when (tauxChance <= 600):
+                Instantiate(Resources.Load("Prefab/bonus1",typeof(BonusHealth)), new Vector3(posEnemy.position.x, posEnemy.position.y, posEnemy.position.z), Quaternion.identity);
+                break;
+            case int tauxChance when (tauxChance <= 1000 && tauxChance >600):
+                Instantiate(Resources.Load("Prefab/bonus2", typeof(BonusTest2)), new Vector3(posEnemy.position.x, posEnemy.position.y, posEnemy.position.z), Quaternion.identity);
                 break;
         }
     } 
 
-    public void RandomBonus(Enemy ene)
+    public void RandomBonus(Transform posEnemy)
     {
-        enemy = ene;
-        int rdn = Random.Range(1, 2);
+        int rdn = Random.Range(1, 100);
+        Debug.Log("RANDOM POUR DROP " + rdn);
 
-        if(rdn == 1)
+        //30% de chance d'obtenir un bonus
+        if(rdn <= 15)
         {
-            RandomDropBonus();
+            RandomDropBonus(posEnemy);
         }
-    }*/
+    }
 }

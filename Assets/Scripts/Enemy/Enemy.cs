@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     private static bool firstBrainly = false;
 
     private ScorePlayer scoreP = new ScorePlayer();
-    private Bonus bonus = new Bonus();
+    private Bonus bonus;
 
     public Transform _target = null;
     protected Vector3 direction = Vector3.forward;
@@ -95,7 +95,9 @@ public class Enemy : MonoBehaviour
                     score += 200;
                 }
 
-                RandomBonus();
+                bonus = new Bonus();
+                bonus.RandomBonus(this.transform);
+
                 Destroy(gameObject, 0);
                 scoreP.NbEnemy -= 1;
             }
@@ -136,35 +138,5 @@ public class Enemy : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * _rotate);
     }
 
-    #region BonusDropMobs
-    /// <summary>
-    /// Chance drop for each bonus
-    /// </summary>
-    private void RandomDropBonus()
-    {
-        int chance = Random.Range(1, 100);
-
-        switch (chance)
-        {
-            case int n when (n <= 100):
-                BonusHealth bonus = new BonusHealth();
-                bonus.DropBonus(this);
-                break;
-        }
-    }
-
-    /// <summary>
-    /// Drop chance bonus 
-    /// </summary>
-    /// <param name="ene"></param>
-    private void RandomBonus()
-    {
-        int rdn = Random.Range(1, 2);
-
-        if (rdn == 1)
-        {
-            RandomDropBonus();
-        }
-    }
-    #endregion
+   
 }
