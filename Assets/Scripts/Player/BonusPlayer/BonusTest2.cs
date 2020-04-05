@@ -8,6 +8,7 @@ public class BonusTest2 : Bonus
     void Start()
     {
         LifeTime = 20;
+        Destroy(gameObject, LifeTime);
     }
 
 }

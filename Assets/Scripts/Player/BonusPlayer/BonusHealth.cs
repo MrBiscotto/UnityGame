@@ -2,9 +2,9 @@
 
 public class BonusHealth : Bonus
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         LifeTime = 10;
+        Destroy(gameObject, LifeTime);
     }
 }

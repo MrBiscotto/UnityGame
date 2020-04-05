@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
                     score += 200;
                 }
 
-                bonus = new Bonus();
+                bonus = gameObject.AddComponent<Bonus>();
                 bonus.RandomBonus(this.transform);
 
                 Destroy(gameObject, 0);

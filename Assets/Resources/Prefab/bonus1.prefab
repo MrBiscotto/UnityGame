@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1109941303499731682}
   - component: {fileID: 1185749852029166137}
   m_Layer: 0
-  m_Name: bonus
+  m_Name: bonus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,4 +106,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f76d8d3473bb82d46820bab98ab4fa29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabHealth: {fileID: 1109941303499731685}
+  prefab: {fileID: 1109941303499731685}
